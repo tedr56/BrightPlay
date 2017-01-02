@@ -24,6 +24,7 @@ private slots:
     void sendBackward(void);
     void sendLoop(void);
     void sendUdp(QByteArray);
+    void ScannInterfaces();
 
 private:
     Ui::MainWindow *ui;
