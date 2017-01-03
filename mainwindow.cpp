@@ -11,6 +11,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     m_udp = new QUdpSocket(this);
     //QShortcut *playShortcut = new QShortcut(QKeySequence(Qt::Key_Space), this);
+    connect(ui->PerfButton, SIGNAL(released()), this, SLOT(sendPerf()));
     connect(ui->PlayButton, SIGNAL(released()), this, SLOT(sendPlay()));
     connect(ui->PauseButton, SIGNAL(released()), this, SLOT(sendPause()));
     connect(ui->ResumeButton, SIGNAL(released()), this, SLOT(sendResume()));
@@ -88,4 +89,9 @@ void MainWindow::sendBackward()
 void MainWindow::sendLoop()
 {
     sendUdp("loopvideo");
+}
+
+void MainWindow::sendPerf()
+{
+    sendUdp("perfvideo")
 }
