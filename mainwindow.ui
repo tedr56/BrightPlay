@@ -29,6 +29,13 @@
      </spacer>
     </item>
     <item>
+     <widget class="QPushButton" name="PerfButton">
+      <property name="text">
+       <string>Performance Video</string>
+      </property>
+     </widget>
+    </item>
+    <item>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
        <spacer name="horizontalSpacer_2">
@@ -84,6 +91,9 @@
         </item>
         <item>
          <widget class="QPushButton" name="ForwardButton">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
           <property name="text">
            <string>Seek Forward</string>
           </property>
@@ -114,7 +124,21 @@
      </layout>
     </item>
     <item>
-     <widget class="QComboBox" name="comboBox"/>
+     <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,4">
+      <property name="bottomMargin">
+       <number>10</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="refreshButton">
+        <property name="text">
+         <string>Refresh</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="comboBox"/>
+      </item>
+     </layout>
     </item>
     <item>
      <spacer name="verticalSpacer_2">

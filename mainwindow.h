@@ -23,6 +23,7 @@ private slots:
     void sendForward(void);
     void sendBackward(void);
     void sendLoop(void);
+    void sendPerf(void);
     void sendUdp(QByteArray);
     void ScannInterfaces();
 

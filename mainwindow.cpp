@@ -17,8 +17,11 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->ResumeButton, SIGNAL(released()), this, SLOT(sendResume()));
     connect(ui->ForwardButton, SIGNAL(released()), this, SLOT(sendForward()));
     connect(ui->BackwardButton, SIGNAL(released()), this, SLOT(sendBackward()));
+    connect(ui->refreshButton, SIGNAL(released()), this, SLOT(ScannInterfaces()));
     connect(ui->LoopButton, SIGNAL(released()), this, SLOT(sendLoop()));
     ScannInterfaces();
+    ui->BackwardButton->hide();
+    ui->ForwardButton->hide();
 }
 
 
@@ -34,6 +37,7 @@ void MainWindow::sendUdp(QByteArray datagram) {
 
 void MainWindow::ScannInterfaces()
 {
+    ui->comboBox->clear();
     QNetworkInterface* IF = new QNetworkInterface();
     QList<QNetworkInterface> IFs = IF->allInterfaces();
     foreach (QNetworkInterface interface, IFs) {
@@ -93,5 +97,5 @@ void MainWindow::sendLoop()
 
 void MainWindow::sendPerf()
 {
-    sendUdp("perfvideo")
+    sendUdp("perfvideo");
 }
